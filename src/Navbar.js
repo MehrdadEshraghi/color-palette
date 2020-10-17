@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Select from '@material-ui/core/Select';
 import { Link } from 'react-router-dom';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -8,68 +8,58 @@ import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/NavbarStyles';
+import useToggleState from './hooks/useToggleState';
 import 'rc-slider/assets/index.css';
 
-class Navbar extends Component {
-	constructor(props) {
-		super(props);
+function Navbar({ handleChange, level, changeLevel, showingAllColors, classes }) {
+	const [ format, setFormat ] = useState('hex');
+	const [ open, toggleOpen ] = useToggleState(false);
 
-		this.state = {
-			format: 'hex',
-			open: false
-		};
-		this.handleFormatChange = this.handleFormatChange.bind(this);
-		this.closeSnackbar = this.closeSnackbar.bind(this);
-	}
+	const handleFormatChange = (e) => {
+		setFormat(e.target.value);
+		toggleOpen();
+		handleChange(e.target.value);
+	};
 
-	handleFormatChange(e) {
-		this.setState({ format: e.target.value, open: true });
-		this.props.handleChange(e.target.value);
-	}
+	const closeSnackbar = () => {
+		toggleOpen();
+	};
 
-	closeSnackbar() {
-		this.setState({ open: false });
-	}
-
-	render() {
-		const { level, changeLevel, showingAllColors, classes } = this.props;
-		const { format } = this.state;
-		return (
-			<header className={classes.Navbar}>
-				<div className={classes.logo}>
-					<Link to="/">reactcolorpicker</Link>
-				</div>
-				{showingAllColors && (
-					<div>
-						<span>Level: {level}</span>
-						<div className={classes.slider}>
-							<Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
-						</div>
+	return (
+		<header className={classes.Navbar}>
+			<div className={classes.logo}>
+				<Link to="/">reactcolorpicker</Link>
+			</div>
+			{showingAllColors && (
+				<div>
+					<span>Level: {level}</span>
+					<div className={classes.slider}>
+						<Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
 					</div>
-				)}
-				<div className={classes.selectContainer}>
-					<Select value={format} onChange={this.handleFormatChange}>
-						<MenuItem value="hex">HEX - #ffffff</MenuItem>
-						<MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
-						<MenuItem value="rgba">RGBA - rgba(255, 255, 255, 1.0)</MenuItem>
-					</Select>
 				</div>
-				<Snackbar
-					anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-					open={this.state.open}
-					autoHideDuration={3000}
-					message={<span id="message-id">Format Changed To {format.toUpperCase()}</span>}
-					ContentProps={{ 'aria-describeby': 'message-id' }}
-					action={[
-						<IconButton onClick={this.closeSnackbar} color="inherit" key="close" aria-label="close">
-							<CloseIcon />
-						</IconButton>
-					]}
-					onClose={this.closeSnackbar}
-				/>
-			</header>
-		);
-	}
+			)}
+			<div className={classes.selectContainer}>
+				<Select value={format} onChange={handleFormatChange}>
+					<MenuItem value="hex">HEX - #ffffff</MenuItem>
+					<MenuItem value="rgb">RGB - rgb(255, 255, 255)</MenuItem>
+					<MenuItem value="rgba">RGBA - rgba(255, 255, 255, 1.0)</MenuItem>
+				</Select>
+			</div>
+			<Snackbar
+				anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+				open={open}
+				autoHideDuration={3000}
+				message={<span id="message-id">Format Changed To {format.toUpperCase()}</span>}
+				ContentProps={{ 'aria-describeby': 'message-id' }}
+				action={[
+					<IconButton onClick={closeSnackbar} color="inherit" key="close" aria-label="close">
+						<CloseIcon />
+					</IconButton>
+				]}
+				onClose={closeSnackbar}
+			/>
+		</header>
+	);
 }
 
 export default withStyles(styles)(Navbar);
