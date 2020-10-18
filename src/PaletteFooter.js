@@ -2,8 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles/PaletteFooterStyles';
 
-function PaletteFooter(props) {
-	const { paletteName, emoji, classes } = props;
+function PaletteFooter({ paletteName, emoji, classes }) {
 	return (
 		<footer className={classes.PaletteFooter}>
 			{paletteName}
