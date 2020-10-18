@@ -17,6 +17,7 @@ function Palette({ classes, palette }) {
 	const changeFormat = (format) => {
 		setFormat(format);
 	};
+
 	const colorBoxes = colors[level].map((color) => (
 		<ColorBox
 			key={color.id}

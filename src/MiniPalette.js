@@ -16,6 +16,7 @@ function MiniPalette({ id, openDialog, goToPalette, classes, paletteName, emoji,
 	const miniColorBoxes = colors.map((color) => (
 		<div key={color.name} className={classes.miniColor} style={{ backgroundColor: color.color }} />
 	));
+
 	return (
 		<div onClick={handleClick} className={classes.root}>
 			<DeleteIcon
