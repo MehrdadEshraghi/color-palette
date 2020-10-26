@@ -31,18 +31,8 @@ function NewPaletteForm({ classes, maxColors, palettes, savePalette, history }) 
 	};
 
 	const addNewColor = (newColor) => {
-		// this.setState({
-		// 	colors: [ ...this.state.colors, newColor ],
-		// 	newColorName: ''
-		// });
 		setColors([ ...colors, newColor ]);
 	};
-
-	// const handleChange = (evt) => {
-	// 	this.setState({
-	// 		[evt.target.name]: evt.target.value
-	// 	});
-	// };
 
 	const clearColors = () => {
 		setColors([]);
@@ -67,7 +57,7 @@ function NewPaletteForm({ classes, maxColors, palettes, savePalette, history }) 
 
 	const handleSubmit = (newPalette) => {
 		newPalette.id = newPalette.paletteName.toLowerCase().replace(/ /g, '-');
-		newPalette.colors = this.state.colors;
+		newPalette.colors = colors;
 		savePalette(newPalette);
 		history.push('/');
 	};
@@ -77,9 +67,6 @@ function NewPaletteForm({ classes, maxColors, palettes, savePalette, history }) 
 	};
 
 	const onSortEnd = ({ oldIndex, newIndex }) => {
-		// this.setState(({ colors }) => ({
-		// 	colors: arrayMove(colors, oldIndex, newIndex)
-		// }));
 		setColors(arrayMove(colors, oldIndex, newIndex));
 	};
 

@@ -1,4 +1,4 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import Select from '@material-ui/core/Select';
 import { Link } from 'react-router-dom';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -50,7 +50,6 @@ function Navbar({ handleChange, level, changeLevel, showingAllColors, classes })
 				open={open}
 				autoHideDuration={3000}
 				message={<span id="message-id">Format Changed To {format.toUpperCase()}</span>}
-				ContentProps={{ 'aria-describeby': 'message-id' }}
 				action={[
 					<IconButton onClick={closeSnackbar} color="inherit" key="close" aria-label="close">
 						<CloseIcon />

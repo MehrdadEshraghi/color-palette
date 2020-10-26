@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -14,13 +14,7 @@ import useToggleState from './hooks/useToggleState';
 import styles from './styles/PaletteFormNavStyles';
 
 function PaletteFormNav({ classes, open, handleDrawerOpen, handleSubmit, palettes }) {
-	const [ newPaletteName, setNewPaletteName ] = useState('');
 	const [ formShowing, toggleFormShowing ] = useToggleState(false);
-
-	// const handleChange = (e) => {
-	// 	this.setState({ [e.target.name]: e.target.value });
-
-	// };
 
 	const showForm = () => {
 		toggleFormShowing();
