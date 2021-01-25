@@ -1,14 +1,18 @@
 export default {
 	root: {
 		backgroundColor: 'white',
-		border: '1px solid black',
 		borderRadious: '5px',
 		padding: '0.5rem',
 		position: 'relative',
 		overflow: 'hidden',
 		cursor: 'pointer',
+		transition: 'all 0.2s ease-in-out',
 		'&:hover svg': {
 			opacity: '1'
+		},
+		'&:hover': {
+			boxShadow: '0px 0px 13px 5px rgba(0,0,0,0.42)',
+			transform: 'scale(1.1)'
 		}
 	},
 	colors: {
@@ -28,8 +32,9 @@ export default {
 		fontSize: '1rem'
 	},
 	emoji: {
-		marginleft: '0.5rem',
-		fontSize: '1.5rem'
+		marginLeft: '0.5rem',
+		fontSize: '1.5rem',
+		lineHeight: 1.5
 	},
 	miniColor: {
 		height: '25%',
@@ -37,9 +42,8 @@ export default {
 		display: 'inline-block',
 		margin: '0 auto',
 		position: 'relative',
-		marginBottom: '-3.5px'
+		marginBottom: '-4.4px'
 	},
-	delete: {},
 	deleteIcon: {
 		color: 'white',
 		backgroundColor: '#eb3b30',

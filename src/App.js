@@ -17,10 +17,14 @@ function App() {
 	const [ palettes, setPalettes ] = useState(savedPalettes || seedColors);
 	useEffect(
 		() => {
+			const syncLocalStorage = () => {
+				window.localStorage.setItem('palettes', JSON.stringify(palettes));
+			};
 			syncLocalStorage();
 		},
 		[ palettes ]
 	);
+
 	const findPalette = (id) => {
 		return palettes.find(function(palette) {
 			return palette.id === id;
@@ -33,10 +37,6 @@ function App() {
 
 	const savePalette = (newPalette) => {
 		setPalettes([ ...palettes, newPalette ]);
-	};
-
-	const syncLocalStorage = () => {
-		window.localStorage.setItem('palettes', JSON.stringify(palettes));
 	};
 
 	return (

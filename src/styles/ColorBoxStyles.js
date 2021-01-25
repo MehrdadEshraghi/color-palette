@@ -41,10 +41,11 @@ export default {
 		right: '0px',
 		bottom: '0px',
 		width: '60px',
-		height: '30px',
+		height: '28px',
 		textAlign: 'center',
-		lineHight: '30px',
-		textTransform: 'uppercase'
+		lineHeight: '25px',
+		textTransform: 'uppercase',
+		letterSpacing: 1.5
 	},
 	copyButton: {
 		color: (props) => (chroma(props.background).luminance() >= 0.7 ? 'rgba(0,0,0, 0.6)' : 'white'),

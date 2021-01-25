@@ -42,11 +42,7 @@ const styles = (theme) => ({
 	},
 	container: {
 		width: '90%',
-		height: '100%',
-		display: 'flex',
-		flexDirection: 'column',
-		justifyContent: 'center',
-		alignItems: 'center'
+		height: '100%'
 	},
 	buttons: {
 		width: '100%'

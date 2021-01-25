@@ -34,7 +34,8 @@ export default {
 			background: 'rgba(255, 255, 255, 0.3)',
 			textTransform: 'uppercase',
 			border: 'none',
-			textDecoration: 'none'
+			textDecoration: 'none',
+			lineHeight: 1.5
 		},
 		[sizes.down('lg')]: {
 			width: '25%',

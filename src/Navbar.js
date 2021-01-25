@@ -28,7 +28,7 @@ function Navbar({ handleChange, level, changeLevel, showingAllColors, classes })
 	return (
 		<header className={classes.Navbar}>
 			<div className={classes.logo}>
-				<Link to="/">reactcolorpicker</Link>
+				<Link to="/">colorpalette</Link>
 			</div>
 			{showingAllColors && (
 				<div>

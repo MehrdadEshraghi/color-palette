@@ -15,6 +15,7 @@ import MiniPalette from './MiniPalette';
 import { Link } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import useToggleState from './hooks/useToggleState';
+import Button from '@material-ui/core/Button';
 import styles from './styles/PaletteListStyles';
 
 function PaletteList({ history, deletePalette, palettes, classes }) {
@@ -44,9 +45,14 @@ function PaletteList({ history, deletePalette, palettes, classes }) {
 		<div className={classes.root}>
 			<div className={classes.container}>
 				<nav className={classes.nav}>
-					<h1 className={classes.heading}>React Colors</h1>
-					<Link to="/palette/new">Create Palette</Link>
+					<h1 className={classes.heading}>Color Palette</h1>
+					<Link to="/palette/new">
+						<Button variant="contained" color="primary">
+							Create Palette
+						</Button>
+					</Link>
 				</nav>
+				<h2 className={classes.description}>Create The Color Palette You Desire</h2>
 				<TransitionGroup className={classes.palettes}>
 					{palettes.map((palette) => (
 						<CSSTransition key={palette.id} classNames="fade" timeout={500}>

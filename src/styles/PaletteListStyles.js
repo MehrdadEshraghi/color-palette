@@ -38,10 +38,11 @@ export default {
 		display: 'flex',
 		width: '100%',
 		justifyContent: 'space-between',
-		alignItems: 'center',
+		alignItems: 'flex-end',
 		color: 'white',
 		'& a': {
-			color: 'white'
+			color: 'white',
+			textDecoration: 'none'
 		}
 	},
 	palettes: {
@@ -59,6 +60,14 @@ export default {
 		}
 	},
 	heading: {
-		fontSize: '2rem'
+		fontSize: '2rem',
+		letterSpacing: 2,
+		marginBottom: 0
+	},
+	description: {
+		marginTop: 0,
+		letterSpacing: 2,
+		color: '#482880',
+		fontWeight: 300
 	}
 };

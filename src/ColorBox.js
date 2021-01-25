@@ -19,6 +19,7 @@ function ColorBox({ name, background, moreUrl, showingFullPalette, classes }) {
 				};
 			}
 		},
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[ copied ]
 	);
 	const changeCopyState = () => {
