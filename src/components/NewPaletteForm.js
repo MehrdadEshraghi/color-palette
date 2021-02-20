@@ -49,7 +49,6 @@ function NewPaletteForm({ classes, maxColors, palettes, savePalette, history }) 
 		while (isDuplicateColor) {
 			rand = Math.floor(Math.random() * allColors.length);
 			randomColor = allColors[rand];
-			console.log(randomColor.name);
 			if (!colorsSet.has(randomColor.name)) isDuplicateColor = false;
 		}
 		setColors([ ...colors, randomColor ]);
