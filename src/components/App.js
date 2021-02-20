@@ -7,8 +7,8 @@ import PaletteList from './PaletteList';
 import SingleColorPalette from './SingleColorPalette';
 import NewPaletteForm from './NewPaletteForm';
 
-import seedColors from './seedColors';
-import { generatePalette } from './colorHelpers';
+import seedColors from '../utils/seedColors';
+import { generatePalette } from '../utils/colorHelpers';
 
 import Page from './Page';
 

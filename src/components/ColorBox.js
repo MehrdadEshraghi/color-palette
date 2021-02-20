@@ -3,8 +3,8 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
-import styles from './styles/ColorBoxStyles';
-import useToggleState from './hooks/useToggleState';
+import styles from '../styles/ColorBoxStyles';
+import useToggleState from '../hooks/useToggleState';
 
 function ColorBox({ name, background, moreUrl, showingFullPalette, classes }) {
 	const [ copied, toggleCopied ] = useToggleState(false);

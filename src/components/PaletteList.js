@@ -14,9 +14,9 @@ import red from '@material-ui/core/colors/red';
 import MiniPalette from './MiniPalette';
 import { Link } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import useToggleState from './hooks/useToggleState';
+import useToggleState from '../hooks/useToggleState';
 import Button from '@material-ui/core/Button';
-import styles from './styles/PaletteListStyles';
+import styles from '../styles/PaletteListStyles';
 
 function PaletteList({ history, deletePalette, palettes, classes }) {
 	const [ deleteId, setDeleteId ] = useState('');

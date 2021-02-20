@@ -1,6 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import styles from './styles/MiniPaletteStyles';
+import styles from '../styles/MiniPaletteStyles';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 function MiniPalette({ id, openDialog, goToPalette, classes, paletteName, emoji, colors }) {

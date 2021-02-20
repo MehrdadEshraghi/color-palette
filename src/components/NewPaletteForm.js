@@ -11,9 +11,9 @@ import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Button from '@material-ui/core/Button';
 import DraggableColorList from './DraggableColorList';
 import { arrayMove } from 'react-sortable-hoc';
-import styles from './styles/NewPaletteFormStyles';
-import useToggleState from './hooks/useToggleState';
-import seedColors from './seedColors';
+import styles from '../styles/NewPaletteFormStyles';
+import useToggleState from '../hooks/useToggleState';
+import seedColors from '../utils/seedColors';
 
 function NewPaletteForm({ classes, maxColors, palettes, savePalette, history }) {
 	NewPaletteForm.defaultProps = {

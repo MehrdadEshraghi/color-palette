@@ -10,8 +10,8 @@ import PaletteMetaForm from './PaletteMetaForm';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
-import useToggleState from './hooks/useToggleState';
-import styles from './styles/PaletteFormNavStyles';
+import useToggleState from '../hooks/useToggleState';
+import styles from '../styles/PaletteFormNavStyles';
 
 function PaletteFormNav({ classes, open, handleDrawerOpen, handleSubmit, palettes }) {
 	const [ formShowing, toggleFormShowing ] = useToggleState(false);

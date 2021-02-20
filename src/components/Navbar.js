@@ -7,8 +7,8 @@ import Snackbar from '@material-ui/core/Snackbar';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
-import styles from './styles/NavbarStyles';
-import useToggleState from './hooks/useToggleState';
+import styles from '../styles/NavbarStyles';
+import useToggleState from '../hooks/useToggleState';
 import 'rc-slider/assets/index.css';
 
 function Navbar({ handleChange, level, changeLevel, showingAllColors, classes }) {
