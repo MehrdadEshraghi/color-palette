@@ -34,7 +34,7 @@ function Navbar({ handleChange, level, changeLevel, showingAllColors, classes })
 				<div>
 					<span>Level: {level}</span>
 					<div className={classes.slider}>
-						<Slider defaultValue={level} min={100} max={900} step={100} onAfterChange={changeLevel} />
+						<Slider defaultValue={level} min={100} max={900} step={100} onChange={changeLevel} />
 					</div>
 				</div>
 			)}

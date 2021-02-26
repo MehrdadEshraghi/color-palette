@@ -9,9 +9,10 @@ import useToggleState from '../hooks/useToggleState';
 function ColorBox({ name, background, moreUrl, showingFullPalette, classes }) {
 	const [ copied, toggleCopied ] = useToggleState(false);
 	const [ flag, setFlag ] = useState(0);
+
 	useEffect(
 		() => {
-			if (flag) {
+			if (flag && copied) {
 				let timerId = setTimeout(() => toggleCopied(), 1500);
 				setFlag(0);
 				return () => {
@@ -22,6 +23,7 @@ function ColorBox({ name, background, moreUrl, showingFullPalette, classes }) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 		[ copied ]
 	);
+
 	const changeCopyState = () => {
 		toggleCopied();
 		setFlag(1);
